@@ -1,10 +1,10 @@
 import GlobalErrorHandlerContextProvider from "@/context/globalErrorHandlerContext/globalErrorHandlerContextProvider";
-import RootLayout from "@/Layout/ExampleLayout"; 
-import ErrorPage from "@/pages/Error"; 
+import RootLayout from "@/Layout/ExampleLayout";
+import ErrorPage from "@/pages/Error";
 import { RouteObject } from "react-router-dom";
 
 export enum Path {
-  ROOT = "/" 
+  ROOT = "/",
 }
 
 const authRouteElements: RouteObject = {
@@ -18,12 +18,12 @@ const authRouteElements: RouteObject = {
     {
       path: Path.ROOT,
       element: <>AuthenticatedPage</>,
-    }
+    },
   ],
 };
 
-const AuthRoutes =()=>{
-    return <>{authRouteElements}</>
-}
+const AuthRoutes = () => {
+  return <>{authRouteElements}</>;
+};
 
 export default AuthRoutes;

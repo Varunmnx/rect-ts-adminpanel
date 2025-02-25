@@ -1,11 +1,10 @@
-import ProtectedRoutes from "@/router/auth-routes"
-import { PublicRoutes } from "@/router/public-routes"
+import ProtectedRoutes from "@/router/auth-routes";
+import { PublicRoutes } from "@/router/public-routes";
 
- 
 const CustomRouter = () => {
-  const isAuthenticated = false
-  
-  return isAuthenticated ? <ProtectedRoutes /> : <PublicRoutes />
-}
+  const isAuthenticated = false;
 
-export default CustomRouter
+  return isAuthenticated ? <ProtectedRoutes /> : <PublicRoutes />;
+};
+
+export default CustomRouter;

@@ -31,5 +31,4 @@ const publicRoutes: RouteObject = {
   ],
 };
 
-
-export const PublicRoutes = ()=><>{publicRoutes}</>
+export const PublicRoutes = () => <>{publicRoutes}</>;
