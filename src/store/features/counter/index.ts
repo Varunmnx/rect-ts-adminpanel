@@ -1,2 +1,2 @@
-export * from './counterSlice'
-export type {SampleCounterBody} from './counterAPI'
+export * from "./counterSlice";
+export type { SampleCounterBody } from "./counterAPI";

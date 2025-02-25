@@ -1,12 +1,12 @@
 export enum ApiCallStatus {
-  Idle = 'idle',
-  Loading = 'loading',
-  Failed = 'failed',
+  Idle = "idle",
+  Loading = "loading",
+  Failed = "failed",
 }
 
 export enum ApiResponseStatus {
-  SUCCESS = 'SUCCESS',
-  NOT_SUCCESS = 'NOT_SUCCESS',
+  SUCCESS = "SUCCESS",
+  NOT_SUCCESS = "NOT_SUCCESS",
 }
 
 type ApiStatusCode =
@@ -60,7 +60,11 @@ type ApiStatusCode =
  * @template T - The type of the result in the response.
  */
 export class APIResponse<T> {
-  constructor(public status: ApiResponseStatus, public result: T, public statusCode: ApiStatusCode) {}
+  constructor(
+    public status: ApiResponseStatus,
+    public result: T,
+    public statusCode: ApiStatusCode,
+  ) {}
 }
 
 export interface PaginatedData<T> {
@@ -71,7 +75,11 @@ export interface PaginatedData<T> {
 }
 
 export class APIPaginatedResponse<T> {
-  constructor(public status: ApiResponseStatus, public result: PaginatedData<T>, public statusCode: ApiStatusCode) {}
+  constructor(
+    public status: ApiResponseStatus,
+    public result: PaginatedData<T>,
+    public statusCode: ApiStatusCode,
+  ) {}
 }
 
 export interface ErrorResponse {

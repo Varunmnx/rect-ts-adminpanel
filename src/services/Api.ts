@@ -1,10 +1,13 @@
-import axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
-import {
-  ApiConfig,
-  DEFAULT_API_CONFIG 
-} from './Api-Config';
-import { Slug } from './Api-Endpoints';
-import { StorageKeys, loadString } from '../utils/storage';
+import axios, {
+  AxiosError,
+  AxiosInstance,
+  AxiosRequestConfig,
+  AxiosResponse,
+  InternalAxiosRequestConfig,
+} from "axios";
+import { ApiConfig, DEFAULT_API_CONFIG } from "./Api-Config";
+import { Slug } from "./Api-Endpoints";
+import { StorageKeys, loadString } from "../utils/storage";
 
 /**
  * Represents the response structure of an API request.
@@ -92,7 +95,7 @@ export class ApiService {
       baseURL: this.config.baseURL,
       timeout: this.config.timeout,
       headers: {
-        Accept: 'application/json',
+        Accept: "application/json",
 
         // "Content-Type": "application/json",
       },
@@ -130,7 +133,11 @@ export class ApiService {
    * @param {APIParameters} param - The API request parameters.
    * @returns {Promise<T | undefined>} - The response data or undefined on error.
    */
-  public async get<T>({ slug, axiosConfig = {}, queryParameters = {} }: APIParameters): Promise<T | undefined> {
+  public async get<T>({
+    slug,
+    axiosConfig = {},
+    queryParameters = {},
+  }: APIParameters): Promise<T | undefined> {
     if (!this.axios) {
       return;
     }
@@ -148,11 +155,19 @@ export class ApiService {
    * @param {APIParameters} param - The API request parameters.
    * @returns {Promise<T | undefined>} - The response data or undefined on error.
    */
-  public async post<T>({ slug, body, axiosConfig = {} }: APIParameters): Promise<T | undefined> {
+  public async post<T>({
+    slug,
+    body,
+    axiosConfig = {},
+  }: APIParameters): Promise<T | undefined> {
     if (!this.axios) {
       return;
     }
-    const response = await this.axios.post<ApiResponse<T>>(slug, body, axiosConfig);
+    const response = await this.axios.post<ApiResponse<T>>(
+      slug,
+      body,
+      axiosConfig,
+    );
     return response.data as unknown as T;
   }
 
@@ -163,11 +178,19 @@ export class ApiService {
    * @param {APIParameters} param - The API request parameters.
    * @returns {Promise<T | undefined>} - The response data or undefined on error.
    */
-  public async put<T>({ slug, body, axiosConfig = {} }: APIParameters): Promise<T | undefined> {
+  public async put<T>({
+    slug,
+    body,
+    axiosConfig = {},
+  }: APIParameters): Promise<T | undefined> {
     if (!this.axios) {
       return;
     }
-    const response = await this.axios.put<ApiResponse<T>>(slug, body, axiosConfig);
+    const response = await this.axios.put<ApiResponse<T>>(
+      slug,
+      body,
+      axiosConfig,
+    );
     return response.data as unknown as T;
   }
 
@@ -178,7 +201,11 @@ export class ApiService {
    * @param {APIParameters} param - The API request parameters.
    * @returns {Promise<T | undefined>} - The response data or undefined on error.
    */
-  public async delete<T>({ slug, axiosConfig = {}, queryParameters = {} }: APIParameters): Promise<T | undefined> {
+  public async delete<T>({
+    slug,
+    axiosConfig = {},
+    queryParameters = {},
+  }: APIParameters): Promise<T | undefined> {
     if (!this.axios) {
       return;
     }
@@ -196,16 +223,24 @@ export class ApiService {
    * @param {APIParameters} param - The API request parameters.
    * @returns {Promise<T | undefined>} - The response data or undefined on error.
    */
-  public async patch<T>({ slug, body, axiosConfig = {} }: APIParameters): Promise<T | undefined> {
+  public async patch<T>({
+    slug,
+    body,
+    axiosConfig = {},
+  }: APIParameters): Promise<T | undefined> {
     if (!this.axios) {
       return;
     }
-    const response = await this.axios.patch<ApiResponse<T>>(slug, body, axiosConfig);
+    const response = await this.axios.patch<ApiResponse<T>>(
+      slug,
+      body,
+      axiosConfig,
+    );
     return response.data as unknown as T;
   }
 }
 
 // Export a singleton instance of the ApiService.
 
-export const API = ApiService.getInstance(DEFAULT_API_CONFIG); 
-export type API_Request_Status = 'SUCCESS' | 'NOT_SUCCESS';
+export const API = ApiService.getInstance(DEFAULT_API_CONFIG);
+export type API_Request_Status = "SUCCESS" | "NOT_SUCCESS";

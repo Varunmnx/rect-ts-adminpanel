@@ -1,3 +1,3 @@
-export interface SampleCounterBody{
-    value: number;
+export interface SampleCounterBody {
+  value: number;
 }

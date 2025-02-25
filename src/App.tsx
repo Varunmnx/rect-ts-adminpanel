@@ -1,7 +1,7 @@
 import "./index.css";
 import { useTranslation } from "react-i18next";
-import { Languages } from "./utils/enum/languages"; 
-import {Image} from "@mantine/core"
+import { Languages } from "./utils/enum/languages";
+import { Image } from "@mantine/core";
 import { DogImage } from "./assets/images/png";
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
       >
         Français
       </button>
-      <Image src={DogImage} height={100} width={200}/>
+      <Image src={DogImage} height={100} width={200} />
     </div>
   );
 }

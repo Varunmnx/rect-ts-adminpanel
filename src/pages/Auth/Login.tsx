@@ -22,14 +22,13 @@ const Login = () => {
     resolver: yupResolver(validationSchema),
     mode: "onBlur", // Validate on blur
   });
- 
+
   const onSubmit = (data: FormData) => {
     console.log("Form data:", data);
   };
 
   return (
     <Box
-
       style={{
         maxWidth: 400,
         margin: "0 auto",

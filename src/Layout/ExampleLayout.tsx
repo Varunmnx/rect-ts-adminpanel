@@ -1,13 +1,12 @@
-import { Suspense } from "react"
-import { Outlet } from "react-router-dom"; 
- 
+import { Suspense } from "react";
+import { Outlet } from "react-router-dom";
 
 const ExampleLayout = () => {
   return (
-    <Suspense>  
-        <Outlet />
+    <Suspense>
+      <Outlet />
     </Suspense>
-  )
-}
+  );
+};
 
-export default ExampleLayout
+export default ExampleLayout;

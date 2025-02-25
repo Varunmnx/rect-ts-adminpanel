@@ -1,4 +1,4 @@
-import { Config } from '../config';
+import { Config } from "../config";
 
 /**
  * The options used to configure the API.
@@ -25,4 +25,3 @@ export const DEFAULT_API_CONFIG: ApiConfig = {
   // Set the default timeout for requests (e.g., 600 seconds).
   timeout: 600000,
 };
- 

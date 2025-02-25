@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 import { createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import { AppDispatch, RootState } from "./root-store";
 import { AxiosError } from "axios";
