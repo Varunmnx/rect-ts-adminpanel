@@ -1,5 +1,5 @@
 import GlobalErrorHandlerContextProvider from "@/context/globalErrorHandlerContext/globalErrorHandlerContextProvider";
-import ExampleLayout from "@/Layout/ExampleLayout";
+import RootLayout from "@/Layout/ExampleLayout";
 import Login from "@/pages/Auth/Login";
 import ErrorPage from "@/pages/Error";
 import LandingPage from "@/pages/Landing";
@@ -12,11 +12,11 @@ export enum Path {
   PRODUCTS = "/products",
 }
 
-export const Routes: RouteObject = {
+const publicRoutes: RouteObject = {
   errorElement: <ErrorPage />,
   element: (
     <GlobalErrorHandlerContextProvider>
-      <ExampleLayout />
+      <RootLayout />
     </GlobalErrorHandlerContextProvider>
   ),
   children: [
@@ -30,3 +30,6 @@ export const Routes: RouteObject = {
     },
   ],
 };
+
+
+export const PublicRoutes = ()=><>{publicRoutes}</>
