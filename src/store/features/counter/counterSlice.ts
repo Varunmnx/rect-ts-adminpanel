@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { AxiosError } from "axios";
 import { SampleCounterBody } from "./counterAPI";
@@ -46,27 +45,26 @@ export const counterSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder
-      .addCase(sampleThunk.fulfilled, (state, action) => {
-        state.value = action.payload;
-        console.log(
-          "%cThis is a styled message",
-          "color: green; font-size: 16px;",
-        );
-      })
-      .addCase(sampleThunk.rejected, (_state, _action) => {
-        // add colored console here
-        console.log(
-          "%cThis is a styled message",
-          "color: red; font-size: 16px;",
-        );
-      })
-      .addCase(sampleThunk.pending, (_state, _action) => {
-        console.log(
-          "%cThis is a styled message",
-          "color: yellow; font-size: 16px;",
-        );
-      });
+    builder.addCase(sampleThunk.fulfilled, (state, action) => {
+      state.value = action.payload;
+      console.log(
+        "%cThis is a styled message",
+        "color: green; font-size: 16px;",
+      );
+    });
+    // .addCase(sampleThunk.rejected, (_state, _action) => {
+    //   // add colored console here
+    //   console.log(
+    //     "%cThis is a styled message",
+    //     "color: red; font-size: 16px;",
+    //   );
+    // })
+    // .addCase(sampleThunk.pending, (_state, _action) => {
+    //   console.log(
+    //     "%cThis is a styled message",
+    //     "color: yellow; font-size: 16px;",
+    //   );
+    // });
   },
 });
 

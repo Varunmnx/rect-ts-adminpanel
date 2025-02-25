@@ -1,8 +1,4 @@
-import {
-  useCallback, 
-  useMemo,
-  useState,
-} from "react"; 
+import { useCallback, useMemo, useState } from "react";
 import { GlobalErrorHandlerType } from "./types/error.type";
 import GlobalErrorHandlerContext from "./global-error-handler-context";
 
@@ -44,7 +40,5 @@ const GlobalErrorHandlerContextProvider = ({
     </GlobalErrorHandlerContext.Provider>
   );
 };
-
-
 
 export default GlobalErrorHandlerContextProvider;

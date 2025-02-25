@@ -1,4 +1,3 @@
- 
 /**
  * Enumeration of URL slugs for different routes or endpoints in the application.
  */
