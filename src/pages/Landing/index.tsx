@@ -1,30 +1,18 @@
-import { useState } from "react";
-import useApiQueryData from "../../hooks/useApiQueryData";
-import { useQueryClient } from "@tanstack/react-query";
-import useEffectSkipMount from "../../hooks/useEffectSkipMount";
+import { useState } from "react"; 
+import { useQueryClient } from "@tanstack/react-query"; 
 // import { queryClient } from "../../main"
-
+import clsx from "clsx"
 const LandingPage = () => {
   const queryClient = useQueryClient();
   const [count, setCount] = useState(0);
-  useApiQueryData({
-    queryFn: () => {
-      console.log("running");
-      return 10;
-    },
-    queryKey: ["test"],
-  });
 
   function refetchQueryTest() {
     queryClient.refetchQueries({
       queryKey: ["test"],
     });
-  }
-  useEffectSkipMount(() => {
-    console.log("useEffectSkipMount running");
-  }, [count]);
+  } 
   return (
-    <div className="bg-red-500 h-screen">
+    <div className={clsx("bg-red-500 h-screen")}>
       <button
         onClick={() => setCount(count + 1)}
         className="bg-green-400  p-5 rounded-md"
