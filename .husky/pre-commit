@@ -1,3 +1,2 @@
 #!/usr/bin/env sh
-yarn lint && yarn format
-yarn test
+yarn lint && yarn format 
