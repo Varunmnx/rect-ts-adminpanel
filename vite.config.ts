@@ -1,7 +1,6 @@
 import { defineConfig } from "vitest/config";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
-
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   test: {
@@ -10,5 +9,10 @@ export default defineConfig({
     setupFiles: "./src/test/setup.ts", // Optional setup file
     include: ["**/*.{test,spec}.{js,ts,jsx,tsx}"], // Custom include pattern
     exclude: ["**/node_modules/**", "**/dist/**"], // Default exclude pattern
+  },
+  resolve: {
+    alias: {
+      "@": "./src",
+    },
   },
 });
