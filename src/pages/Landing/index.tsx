@@ -1,7 +1,7 @@
-import { useState } from "react"; 
-import { useQueryClient } from "@tanstack/react-query"; 
+import { useState } from "react";
+import { useQueryClient } from "@tanstack/react-query";
 // import { queryClient } from "../../main"
-import clsx from "clsx"
+import clsx from "clsx";
 const LandingPage = () => {
   const queryClient = useQueryClient();
   const [count, setCount] = useState(0);
@@ -10,7 +10,7 @@ const LandingPage = () => {
     queryClient.refetchQueries({
       queryKey: ["test"],
     });
-  } 
+  }
   return (
     <div className={clsx("bg-red-500 h-screen")}>
       <button
