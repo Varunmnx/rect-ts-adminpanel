@@ -1,35 +1,34 @@
-
 export enum StorageKeys {
   /**
    * Key for storing user data.
    */
-  USERDATA = '@UserData',
+  USERDATA = "@UserData",
 
   /**
    * Key for storing authentication token.
    */
-  TOKEN = '@Token',
+  TOKEN = "@Token",
   //  user authentication status
-  AUTHSTATUS = '@AuthStatus',
+  AUTHSTATUS = "@AuthStatus",
 
   // refesh token for current user
-  REFRESH = '@Refresh',
+  REFRESH = "@Refresh",
   /*
     fileName of files uploaded
   */
-  UPLOADED_FILENAMES = '@UploadedFileNames',
+  UPLOADED_FILENAMES = "@UploadedFileNames",
   /*
     feedback names
   */
-  FEEDBACK = '@FeedBack',
+  FEEDBACK = "@FeedBack",
   /*
     feedbacks
  */
-  NOTESATTACHMENT = '@NotesAttachment',
+  NOTESATTACHMENT = "@NotesAttachment",
 
-  USERAUTHDATA = '@UserAuthData',
+  USERAUTHDATA = "@UserAuthData",
 }
- 
+
 /**
  * Loads a string from storage.
  *

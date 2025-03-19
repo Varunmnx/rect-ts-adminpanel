@@ -39,4 +39,4 @@ class ProtectedPath extends BasePath {
 }
 
 export const PATH_PUBLIC = new PublicPath();
-export const PATH_AUTH = new ProtectedPath(); 
+export const PATH_AUTH = new ProtectedPath();

@@ -4,7 +4,7 @@ export enum LogLevel {
   DEBUG,
   INFO,
   WARN,
-  ERROR
+  ERROR,
 }
 
 const isProduction = Config.MODE === "production";
@@ -24,5 +24,5 @@ export const logger = {
   debug: (...args: unknown[]) => log(LogLevel.DEBUG, ...args),
   info: (...args: unknown[]) => log(LogLevel.INFO, ...args),
   warn: (...args: unknown[]) => log(LogLevel.WARN, ...args),
-  error: (...args: unknown[]) => log(LogLevel.ERROR, ...args)
+  error: (...args: unknown[]) => log(LogLevel.ERROR, ...args),
 };

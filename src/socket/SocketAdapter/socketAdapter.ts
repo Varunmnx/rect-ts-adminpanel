@@ -1,4 +1,4 @@
-import { RealTimeEventName } from '../RealTimeEventHandler/realTimeEvent';
+import { RealTimeEventName } from "../RealTimeEventHandler/realTimeEvent";
 
 export interface SocketAdapter {
   isConnected: boolean;
@@ -6,8 +6,13 @@ export interface SocketAdapter {
   connect(): void;
   disconnect(): void;
   onConnect<T>(callback: (socketAdapter: SocketAdapter, data: T) => void): void;
-  onDisConnect<T>(callback: (socketAdapter: SocketAdapter, data: T) => void): void;
+  onDisConnect<T>(
+    callback: (socketAdapter: SocketAdapter, data: T) => void,
+  ): void;
   onError<T>(callback: (socketAdapter: SocketAdapter, data: T) => void): void;
   emitEvent<T>(eventName: RealTimeEventName, data: T): boolean;
-  onEvent<T>(eventName: RealTimeEventName, callback: (socketAdapter: SocketAdapter, data: T) => void): void;
+  onEvent<T>(
+    eventName: RealTimeEventName,
+    callback: (socketAdapter: SocketAdapter, data: T) => void,
+  ): void;
 }

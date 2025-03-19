@@ -1,5 +1,5 @@
-import { Config } from '../config';
-import { SocketAdapterImpl } from './SocketAdapter/socketAdapterImp';
+import { Config } from "../config";
+import { SocketAdapterImpl } from "./SocketAdapter/socketAdapterImp";
 
 class SocketSingleton {
   private static instances: Record<string, SocketAdapterImpl> = {};
@@ -14,8 +14,8 @@ class SocketSingleton {
 
 export const socketAdapter = SocketSingleton.getSocketAdapter(Config.API_URL);
 
-export * from './RealTimeEventHandler/realTimeEventHandler';
-export * from './RealTimeEventHandler/realTimeEvent';
-export * from './RealTimeObserverDecorator/realTimeObserverDecorator';
-export * from './SocketAdapter/socketAdapter';
-export * from './SocketAdapter/socketAdapterImp';
+export * from "./RealTimeEventHandler/realTimeEventHandler";
+export * from "./RealTimeEventHandler/realTimeEvent";
+export * from "./RealTimeObserverDecorator/realTimeObserverDecorator";
+export * from "./SocketAdapter/socketAdapter";
+export * from "./SocketAdapter/socketAdapterImp";

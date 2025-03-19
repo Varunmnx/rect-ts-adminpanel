@@ -1,6 +1,8 @@
-import { RealTimeEvent, RealTimeEventName } from "../RealTimeEventHandler/realTimeEvent";
+import {
+  RealTimeEvent,
+  RealTimeEventName,
+} from "../RealTimeEventHandler/realTimeEvent";
 import { RealTimeEventHandler } from "../RealTimeEventHandler/realTimeEventHandler";
-
 
 /**
  * Decorator class for handling real-time events in a modular way.
@@ -11,13 +13,15 @@ export class RealTimeEventHandlerDecorator<T> {
   private readonly realTimeEventHandler: RealTimeEventHandler;
   private callback: ((event: RealTimeEvent<T>) => void) | null;
 
-  constructor(realTimeEventHandler: RealTimeEventHandler, eventName: RealTimeEventName) {
+  constructor(
+    realTimeEventHandler: RealTimeEventHandler,
+    eventName: RealTimeEventName,
+  ) {
     this.next = null;
     this.eventName = eventName;
     this.realTimeEventHandler = realTimeEventHandler;
     this.callback = null;
   }
-
 
   public addNext(next: RealTimeEventHandlerDecorator<T>): this {
     if (!this.next) {
@@ -30,7 +34,12 @@ export class RealTimeEventHandlerDecorator<T> {
   }
 
   public sendEvent(event: RealTimeEvent<T>): this {
-    if (!event || !event?.eventName || !this.realTimeEventHandler || !this.eventName) {
+    if (
+      !event ||
+      !event?.eventName ||
+      !this.realTimeEventHandler ||
+      !this.eventName
+    ) {
       if (this.next) {
         this.next.sendEvent(event);
       }
@@ -58,7 +67,7 @@ export class RealTimeEventHandlerDecorator<T> {
     }
   }
 
-  public observeEvent(callback: (event: RealTimeEvent<T>) => void): this { 
+  public observeEvent(callback: (event: RealTimeEvent<T>) => void): this {
     this.callback = callback;
 
     if (this.realTimeEventHandler && this.eventName) {

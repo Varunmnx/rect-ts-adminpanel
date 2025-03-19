@@ -5,7 +5,7 @@ import ErrorPage from "@/pages/Error";
 import LandingPage from "@/pages/Landing";
 import { RouteObject } from "react-router-dom";
 
-export enum Path {
+enum Path {
   ROOT = "/",
   ContextProvider = "/ContextProvider",
   LOGIN = "/auth/login",
