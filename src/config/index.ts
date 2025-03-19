@@ -1,3 +1,5 @@
+import { QueryClient } from "@tanstack/react-query";
+
 export interface Config {
   readonly MODE: string;
 }
@@ -11,3 +13,5 @@ export const BaseConfig: Config = {
 };
 
 export const Config: Readonly<Config> = { ...BaseConfig };
+
+export const queryClient = new QueryClient();

@@ -1,7 +1,17 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
-import { TextInput, Button, Box, Group } from "@mantine/core";
+import {
+  Form, // ✅ Add Form wrapper
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 // Validation schema
 const validationSchema = Yup.object().shape({
@@ -14,13 +24,9 @@ const validationSchema = Yup.object().shape({
 type FormData = Yup.InferType<typeof validationSchema>;
 
 const Login = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
+  const form = useForm<FormData>({
     resolver: yupResolver(validationSchema),
-    mode: "onBlur", // Validate on blur
+    mode: "onBlur",
   });
 
   const onSubmit = (data: FormData) => {
@@ -28,39 +34,47 @@ const Login = () => {
   };
 
   return (
-    <Box
-      style={{
-        maxWidth: 400,
-        margin: "0 auto",
-        padding: "1rem",
-        border: "1px solid #eaeaea",
-        borderRadius: "8px",
-      }}
-    >
-      <form onSubmit={handleSubmit(onSubmit)}>
-        {/* Name Input */}
-        <TextInput
-          label="Name"
-          placeholder="Enter your name"
-          {...register("name")}
-          error={errors.name?.message}
+    <Form {...form}>
+      {" "}
+      {/* ✅ Wrap inside Form */}
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        {/* Name Field */}
+        <FormField
+          control={form.control} // ✅ Fix: use form.control
+          name="name"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Username</FormLabel>
+              <FormControl>
+                <Input {...field} placeholder="Enter your name" />
+              </FormControl>
+              <FormDescription>
+                This is your public display name.
+              </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
         />
 
-        {/* Email Input */}
-        <TextInput
-          label="Email"
-          placeholder="Enter your email"
-          {...register("email")}
-          error={errors.email?.message}
-          mt="md"
+        {/* Email Field */}
+        <FormField
+          control={form.control} // ✅ Fix: use form.control
+          name="email"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Email</FormLabel>
+              <FormControl>
+                <Input {...field} type="email" placeholder="Enter your email" />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
         />
 
         {/* Submit Button */}
-        <Group mt="md">
-          <Button type="submit">Submit</Button>
-        </Group>
+        <Button type="submit">Submit</Button>
       </form>
-    </Box>
+    </Form>
   );
 };
 

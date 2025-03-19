@@ -1,30 +1,35 @@
-import { useState } from "react";
-import { useQueryClient } from "@tanstack/react-query";
-// import { queryClient } from "../../main"
-import clsx from "clsx";
+import { useTranslation } from "react-i18next";
+import { useTheme } from "@/context/theme-provider-context/theme-provider";
+import { Languages } from "@/utils/enum/languages";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 const LandingPage = () => {
-  const queryClient = useQueryClient();
-  const [count, setCount] = useState(0);
+  const { t, i18n } = useTranslation();
+  const { setTheme, theme } = useTheme();
 
-  function refetchQueryTest() {
-    queryClient.refetchQueries({
-      queryKey: ["test"],
-    });
-  }
+  const changeLanguage = (language: Languages) => {
+    i18n.changeLanguage(language);
+  };
   return (
-    <div className={clsx("bg-red-500 h-screen")}>
-      <button
-        onClick={() => setCount(count + 1)}
-        className="bg-green-400  p-5 rounded-md"
+    <div>
+      <h1>{t("welcome")}</h1>
+      <p>{t("description")}</p>
+
+      <Button
+        onClick={() => changeLanguage(Languages.EN)}
+        className={cn("bg-red-300", { "bg-green-300": i18n.language === "en" })}
       >
-        click me {count}
-      </button>
-      <button
-        onClick={() => refetchQueryTest()}
-        className="bg-green-500  p-5 rounded-md"
+        English
+      </Button>
+      <Button
+        onClick={() => changeLanguage(Languages.FR)}
+        className={cn("bg-red-300", { "bg-green-300": i18n.language === "fr" })}
       >
-        click me to trigger refetch {count}
-      </button>
+        Français
+      </Button>
+      <Button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+        Toggle
+      </Button>
     </div>
   );
 };

@@ -3,7 +3,7 @@ import RootLayout from "@/Layout/ExampleLayout";
 import Login from "@/pages/Auth/Login";
 import ErrorPage from "@/pages/Error";
 import LandingPage from "@/pages/Landing";
-import { RouteObject } from "react-router-dom";
+import { RouteObject, useRoutes } from "react-router-dom";
 
 enum Path {
   ROOT = "/",
@@ -31,4 +31,7 @@ const publicRoutes: RouteObject = {
   ],
 };
 
-export const PublicRoutes = () => <>{publicRoutes}</>;
+export const PublicRoutes = () => {
+  const routes = useRoutes([publicRoutes]);
+  return <>{routes}</>;
+};
