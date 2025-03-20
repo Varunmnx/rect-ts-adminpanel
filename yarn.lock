@@ -747,9 +747,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/core@npm:^7.14.1":
-  version: 7.17.0
-  resolution: "@mantine/core@npm:7.17.0"
+"@mantine/core@npm:^7.17.2":
+  version: 7.17.2
+  resolution: "@mantine/core@npm:7.17.2"
   dependencies:
     "@floating-ui/react": ^0.26.28
     clsx: ^2.1.1
@@ -758,10 +758,10 @@ __metadata:
     react-textarea-autosize: 8.5.6
     type-fest: ^4.27.0
   peerDependencies:
-    "@mantine/hooks": 7.17.0
+    "@mantine/hooks": 7.17.2
     react: ^18.x || ^19.x
     react-dom: ^18.x || ^19.x
-  checksum: a11d90d0e0368025fe1a4634d7b9613842a40bec1d2ed25f361ad3351b1b99ebcbd031e39e687973ebfc359ccdf2d09f52df6a14030c4d03d1aae5ab57ac5c07
+  checksum: 644e6e10e1f1fad8bc8169f302c7bea0f2f040c2c2097f32f7f72cb16243c7572cecfadd3c39ee25c8beeb2024c4befbffecd0cb9de55e9d0aafd1364458cc7c
   languageName: node
   linkType: hard
 
@@ -4161,7 +4161,7 @@ __metadata:
   dependencies:
     "@eslint/js": ^9.21.0
     "@hookform/resolvers": ^3.9.1
-    "@mantine/core": ^7.14.1
+    "@mantine/core": ^7.17.2
     "@mantine/hooks": ^7.14.1
     "@reduxjs/toolkit": ^2.2.3
     "@tailwindcss/postcss": ^4.0.8

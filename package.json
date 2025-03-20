@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
-    "@mantine/core": "^7.14.1",
+    "@mantine/core": "^7.17.2",
     "@mantine/hooks": "^7.14.1",
     "@reduxjs/toolkit": "^2.2.3",
     "@tailwindcss/postcss": "^4.0.8",
