@@ -1,10 +1,15 @@
-import ProtectedRoutes from "@/router/auth-routes";
-import { PublicRoutes } from "@/router/public-routes";
+import "./index.css";
+import { BrowserRouter } from "react-router-dom";
+import PublicRoutes from "./router/public-routes";
+import AuthRoutes from "./router/auth-routes";
 
-const CustomRouter = () => {
-  const isAuthenticated = false;
+function App() {
+  const authenticated = false
+  return (
+    <BrowserRouter>
+      { authenticated ? <AuthRoutes/> :<PublicRoutes />}
+    </BrowserRouter>
+  )
+}
 
-  return isAuthenticated ? <ProtectedRoutes /> : <PublicRoutes />;
-};
-
-export default CustomRouter;
+export default App;
